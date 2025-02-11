@@ -57,4 +57,4 @@ python3 Oops365.py mfasweep -e salad@cato.com -p appetizer
 
 
 
-Contributions are alwas welcome <3
+Contributions are alwas welcome, this script itself is inspired and combination of multiple amazing scripts [pwnedlabs](http://pwnedlabs.io/) including but not limited to [uwg](https://github.com/hac01/uwg), [o365enum](https://github.com/gremwell/o365enum), [Oh365UserFinder](https://github.com/dievus/Oh365UserFinder), [MFASweep](https://github.com/dafthack/MFASweep), [Mfade](https://github.com/ibaiC/MFade) and more  <3
