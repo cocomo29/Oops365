@@ -2,14 +2,14 @@
     <h1>Oops365 🚀</h1>
 </div>
 
-Oops365 is a modular security testing tool for Microsoft 365. It helps assess authentication mechanisms, generate and verify emails, perform password spraying, and enumerate MFA settings.  
+Oops365 is a modular security testing tool for Microsoft 365. It helps assess authentication mechanisms, generate and verify emails, perform password spraying, and identity MFA enablement gaps.  
 
 ## Features  
 - **CHECK** – Identify if a domain is **Managed** or **Federated**  
 - **GENERATE** – Generate potential email addresses based on names and a domain  
 - **VERIFY** – Check which generated emails are valid in Microsoft 365  
 - **SPRAY** – Perform password spraying against valid accounts  
-- **MFASWEEP** – Determine if MFA is enforced on valid accounts  
+- **MFASWEEP** – Dtermine gaps in MFA settings
 
 ## Installation  
 ```bash  
