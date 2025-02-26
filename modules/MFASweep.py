@@ -147,15 +147,7 @@ def jitteredSleep(stime, jitter=1):
     print(f"{Fore.YELLOW}[*]Sleeping {stime} seconds...{Style.RESET_ALL}")
     time.sleep(stime)
 
-def main():
-    parser = argparse.ArgumentParser(description="Microsoft Authentication Script")
-    parser.add_argument("-e", "--email", required=True, help="Email address for login")
-    parser.add_argument("-p", "--password", required=True, help="Password for login")
-    args = parser.parse_args()
-
-    username = args.email
-    password = args.password
-
+def checkCredentials(username, password):
     adfsDomain = False
     adfsLoginSuccess = False
     ewsSuccess = False
@@ -221,6 +213,30 @@ def main():
         {Style.RESET_ALL}
         """
     print(results)
+
+def main():
+    parser = argparse.ArgumentParser(description="Microsoft Authentication Script")
+    parser.add_argument("-e", "--email", required=False, help="Email address for login")
+    parser.add_argument("-p", "--password", required=False, help="Password for login")
+    parser.add_argument("-l", "--list", required=False, type=argparse.FileType('r') , help="List containing colon seperated email addresses and passwords")
+    args = parser.parse_args()
+
+    if (args.email and args.password) and args.list:
+        print(f"{Fore.RED}[-] Please provide either a single email and password or a list of email and password pairs, not both.{Style.RESET_ALL}")
+        exit(1)
+
+    if args.list:
+        for line in args.list:
+            creds = line.strip().split(":")
+            username = creds[0]
+            password = creds[1]
+            checkCredentials(username, password)
+            jitteredSleep(5)
+    else:
+        username = args.email
+        password = args.password
+
+
 
 if __name__ == "__main__":
     main()
