@@ -3,6 +3,9 @@ import importlib
 import sys
 from colorama import Fore, Style
 
+sys.stdout.reconfigure(encoding='utf-8')
+sys.path.append('modules')
+
 MODULES = {
     "check": "modules.CheckDomain",
     "generate": "modules.GenerateEmails",
